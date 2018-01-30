@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='./css/style.css'>
+    <link rel='stylesheet' href='./css/toggle.css'>
+  </head>
+  <body>
+    <div class='row ctrl-window'>
+      <h3>session replay uglify</h3>
+      <div class='row'>
+        <div class='col-6'>
+          <p>滑鼠移動混淆</p>
+        </div>
+        <div class='col-6'>
+          <button id='simulatioMove' type='button' class='btn btn-toggle' data-toggle='button' aria-pressed='false' autocomplete='off'>
+            <div class='handle'></div>
+          </button>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-6'>
+          <p>滑鼠點擊混淆</p>
+        </div>
+        <div class='col-6'>
+          <button id='simulationClick' type='button' class='btn btn-toggle' data-toggle='button' aria-pressed='false' autocomplete='off'>
+            <div class='handle'></div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src='./js/jquery.min.js'></script>
+    <script src='./js/bootstrap.min.js'></script>
+    <script src='./js/popup.js'></script>
+  </body>
+</html>
+
