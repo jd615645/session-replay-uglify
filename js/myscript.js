@@ -62,6 +62,7 @@ function simulationClick () {
   console.log(`Click`)
 }
 
+// test
 $(document).on('mousemove', function (event) {
   // console.log(`(${event.pageX}, ${event.pageY})`)
 })
