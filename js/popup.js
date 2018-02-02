@@ -1,8 +1,10 @@
+// 聆聽DOM事件
 document.addEventListener('DOMContentLoaded', function (dcle) {
+  // 設定localStorage用於紀錄彈出視窗狀態
   var simulationMove = window.localStorage.simulationMove || 'false'
   var simulationClick = window.localStorage.simulationClick || 'false'
-  // console.log(simulationMove)
 
+  // 按鈕功能開關事件
   chrome.tabs.onActivated.addListener(function () {
     console.log('change')
     if (simulationMove === 'true') {
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function (dcle) {
     }
   })
 
+  // 確定初始按鈕狀態
   if (simulationMove === 'true') {
     window.localStorage.simulationMove = 'true'
     $('#simulatioMove').addClass('active')
@@ -34,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function (dcle) {
     window.localStorage.simulationMove = 'false'
     $('#simulatioMove').removeClass('active')
     chrome.tabs.query({active: true, currentWindow: true}, function (tab) {
-      // 取得當前tab
-      // 向tab發送請求
+      // 取得當前tab, 向tab發送請求
       chrome.tabs.sendMessage(tab[0].id, {
         type: 'simulationMove',
         action: false
@@ -49,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function (dcle) {
     window.localStorage.simulationClick = 'false'
     $('#simulationClick').removeClass('active')
     chrome.tabs.query({active: true, currentWindow: true}, function (tab) {
-      // 取得當前tab
-      // 向tab發送請求
+      // 取得當前tab, 向tab發送請求
       chrome.tabs.sendMessage(tab[0].id, {
         type: 'simulationClick',
         action: false
